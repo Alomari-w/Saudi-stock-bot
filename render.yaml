@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: saudi-stock-bot
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: python main.py
+    envVars:
+      - key: TELEGRAM_TOKEN
+        value: '8182853019:AAEFgBwedy3fOsBl1YwZ8dgqBye7qY-8FYg'
+      - key: CHAT_ID
+        value: '5999463486' 
