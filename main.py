@@ -3,7 +3,7 @@ import time
 from telegram import Bot
 from datetime import datetime
 import os
-
+import pandas as pd
 TELEGRAM_TOKEN = os.getenv("TELEGRAM_TOKEN")
 CHAT_ID = os.getenv("CHAT_ID")
 bot = Bot(token=TELEGRAM_TOKEN)
