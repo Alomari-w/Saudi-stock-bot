@@ -20,7 +20,13 @@ while True:
         data = yf.download(stock, period='1d', interval='1m')
         if data.empty:
             continue
-        price = data['Close'].iloc[-1]
-        if price < 100:  # شرط بسيط كمثال
-            send_alert(stock, 'شراء', price)
+
+      
+        price_series = data['Close'].tail(1)
+
+     
+        if not price_series.empty and pd.notna(price_series.values[0]):
+            price = price_series.values[0]
+            if price < 100:
+                send_alert(stock, 'شراء', price)
     time.sleep(60)
