@@ -26,7 +26,7 @@ while True:
 
      
         if not price_series.empty and pd.notna(price_series.values[0]):
-            price = price_series.values[0]
+            price = float (price_series.values[0])
             if price < 100:
                 send_alert(stock, 'شراء', price)
     time.sleep(60)
